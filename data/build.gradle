@@ -1,14 +1,16 @@
 apply plugin: 'com.android.library'
+apply from: '../buildsystem/dependencies.gradle'
+apply from: '../buildsystem/version.gradle'
 
 android {
-    compileSdkVersion 28
-
+    compileSdkVersion app.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+
+        versionCode appVersionCode
+        versionName appVersionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -27,4 +29,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     api project(':domain')
+
+    implementation generalDeps.appcompat
+    implementation generalDeps.kotlinJdk
+
+    androidTestImplementation androidTestDeps.junitrunner
 }
