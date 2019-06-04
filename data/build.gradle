@@ -1,4 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
 apply from: '../buildsystem/dependencies.gradle'
 apply from: '../buildsystem/version.gradle'
 
@@ -32,6 +36,8 @@ dependencies {
 
     implementation generalDeps.appcompat
     implementation generalDeps.kotlinJdk
+
+    implementation generalDeps.koin
 
     androidTestImplementation androidTestDeps.junitrunner
 }
