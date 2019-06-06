@@ -3,12 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply from: '../buildsystem/version.gradle'
+apply from: '../buildsystem/information.gradle'
 
 android {
     compileSdkVersion app.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.sentiment"
+        applicationId APPLICATION_ID
         minSdkVersion app.minSdkVersion
         targetSdkVersion app.targetSdkVersion
 
@@ -20,6 +21,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
         }
     }
 }

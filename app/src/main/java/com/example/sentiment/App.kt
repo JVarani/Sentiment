@@ -17,8 +17,8 @@ class App : Application() {
             this,
             listOf(
                 dataModule,
-                presentationModule,
-                domainModule
+                domainModule,
+                presentationModule
             )
         )
     }

@@ -32,4 +32,7 @@ dependencies {
     implementation generalDeps.koin
     implementation generalDeps.reflect
 
+    implementation generalDeps.rxjava
+    implementation generalDeps.supportAnnotations
+
 }
