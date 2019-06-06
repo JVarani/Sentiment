@@ -8,6 +8,7 @@ import android.view.inputmethod.EditorInfo
 import com.example.presentation.R
 import com.example.presentation.base.BaseActivity
 import com.example.presentation.features.search.models.PTweet
+import com.example.presentation.general.extensions.fadeOut
 import com.example.presentation.general.extensions.hideKeyboard
 import kotlinx.android.synthetic.main.activity_search_user.*
 import org.koin.android.architecture.ext.viewModel
@@ -49,8 +50,8 @@ class SearchUserActivity : BaseActivity<SearchUserViewModel>() {
                             recyclerViewSearch.visibility = View.INVISIBLE
                         }
                         else -> {
-                            progressSearchLoading.visibility = View.GONE
-                            imgSearchLogo.visibility = View.GONE
+                            progressSearchLoading.visibility = View.INVISIBLE
+                            imgSearchLogo.fadeOut()
                             recyclerViewSearch.visibility = View.VISIBLE
 
                             editTextSearch.setCompoundDrawablesWithIntrinsicBounds(
@@ -61,6 +62,7 @@ class SearchUserActivity : BaseActivity<SearchUserViewModel>() {
                             )
                         }
                     }
+                    includeSearchError.visibility = View.INVISIBLE
                 }
             })
 
@@ -70,6 +72,14 @@ class SearchUserActivity : BaseActivity<SearchUserViewModel>() {
                 listN?.let { list ->
                     recyclerViewSearch.adapter = TweetsAdapter(list)
                 }
+            })
+
+        viewModel
+            .mustShowError()
+            .observe(this, Observer<Unit> {
+                includeSearchError.visibility = View.VISIBLE
+                recyclerViewSearch.visibility = View.INVISIBLE
+                progressSearchLoading.visibility = View.INVISIBLE
             })
     }
 }

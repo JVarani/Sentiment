@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Sentiment</string>
-    <string name="search_user_hint">Search an user</string>
+    <string name="search_user_hint">Search tweets from any user</string>
+    <string name="search_error_default">Não conseguimos encontrar resultados\nTente novamente!</string>
 </resources>

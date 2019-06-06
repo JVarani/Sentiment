@@ -46,7 +46,6 @@
         android:layout_marginStart="@dimen/spacing_12dp"
         android:layout_marginTop="@dimen/spacing_8dp"
         android:layout_marginEnd="@dimen/spacing_12dp"
-        android:background="@color/divider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
