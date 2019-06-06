@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 
 apply from: '../buildsystem/dependencies.gradle'
 apply from: '../buildsystem/version.gradle'
+apply from: '../buildsystem/information.gradle'
 
 android {
     compileSdkVersion app.compileSdkVersion
@@ -17,7 +18,9 @@ android {
         versionName appVersionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        buildConfigField "String", "TWITTER_API", TWITTER_API
+        buildConfigField "String", "CONSUMER_KEY", CONSUMER_KEY
+        buildConfigField "String", "CONSUMER_SECRET", CONSUMER_SECRET
     }
 
     buildTypes {
@@ -38,6 +41,13 @@ dependencies {
     implementation generalDeps.kotlinJdk
 
     implementation generalDeps.koin
+    implementation generalDeps.rxkotlin
+    implementation generalDeps.rxjava
+    implementation generalDeps.retrofit
+    implementation generalDeps.retrofitRxAdapter
+    implementation generalDeps.gsonConverter
+
+    implementation generalDeps.okhttp3LoggingInterceptor
 
     androidTestImplementation androidTestDeps.junitrunner
 }
