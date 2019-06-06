@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgItemTweet"
+        android:layout_width="@dimen/size_50dp"
+        android:layout_height="@dimen/size_50dp"
+        android:layout_margin="@dimen/spacing_12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        tools:src="@drawable/ic_twitter_80dp" />
 
     <TextView
-        android:id="@+id/txtItemTweets"
+        android:id="@+id/txtItemTweetName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/spacing_8dp"
+        android:layout_marginEnd="@dimen/spacing_8dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/imgItemTweet"
+        app:layout_constraintTop_toTopOf="@id/imgItemTweet"
+        tools:text="@string/app_name" />
 
+    <TextView
+        android:id="@+id/txtItemTweetTweets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_8dp"
+        android:layout_marginEnd="@dimen/spacing_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgItemTweet"
+        app:layout_constraintTop_toBottomOf="@+id/txtItemTweetName"
+        tools:text="@string/app_name" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/spacing_12dp"
+        android:layout_marginTop="@dimen/spacing_8dp"
+        android:layout_marginEnd="@dimen/spacing_12dp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtItemTweetTweets"
+        app:layout_constraintVertical_bias="1" />
 </android.support.constraint.ConstraintLayout>

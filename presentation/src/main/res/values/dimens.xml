@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_80dp">80dp</dimen>
+    <dimen name="size_50dp">50dp</dimen>
+
+
+    <dimen name="spacing_20dp">20dp</dimen>
+    <dimen name="spacing_28dp">28dp</dimen>
+    <dimen name="spacing_50dp">50dp</dimen>
+    <dimen name="spacing_80dp">80dp</dimen>
+    <dimen name="spacing_8dp">8dp</dimen>
+    <dimen name="spacing_12dp">12dp</dimen>
+
+
+    <dimen name="radius_20dp">20dp</dimen>
+</resources>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Sentiment</string>
+    <string name="search_user_hint">Search an user</string>
 </resources>

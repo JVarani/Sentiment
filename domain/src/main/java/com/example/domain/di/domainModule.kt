@@ -11,7 +11,7 @@ const val SCHEDULER_IO = "schedulerIo"
 val domainModule = applicationContext {
 
     bean(SCHEDULER_IO) {
-        Schedulers.io()
+        Schedulers.newThread()
     }
 
     // ========== CLUBE ALELO

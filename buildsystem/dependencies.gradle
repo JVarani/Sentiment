@@ -32,6 +32,10 @@ def arch_components_version = "1.1.1"
 def junit_version = '4.12'
 def junit_runner_version = '1.0.2'
 
+// Picasso
+def picasso_version = '2.71828'
+
+
 // implementation / api ====
 ext.generalDeps = [
         // Kotlin:
@@ -71,6 +75,8 @@ ext.generalDeps = [
 
         okhttp3LoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp3logginginterceptor_version",
         gson                     : "com.google.code.gson:gson:$gson_version",
+
+        picasso                  : "com.squareup.picasso:picasso:$picasso_version",
 ]
 
 // androidTestImplementation / androidTestApi ====
