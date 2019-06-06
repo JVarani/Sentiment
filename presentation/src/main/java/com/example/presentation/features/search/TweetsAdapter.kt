@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.presentation.R
 import com.example.presentation.features.search.models.PTweet
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_tweets.view.*
 
 class TweetsAdapter(
@@ -13,10 +14,12 @@ class TweetsAdapter(
 ) : RecyclerView.Adapter<TweetsAdapter.ViewHolder>() {
 
 
-    class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
+    class ViewHolder(private val item: View) : RecyclerView.ViewHolder(item) {
 
         fun bindView(pTweet: PTweet) {
-            itemView.txtItemTweets.text = pTweet.tweet
+            Picasso.get().load(pTweet.user.profileImage).into(item.imgItemTweet)
+            item.txtItemTweetName.text = pTweet.user.name
+            item.txtItemTweetTweets.text = pTweet.tweet
         }
     }
 

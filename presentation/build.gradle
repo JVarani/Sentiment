@@ -33,6 +33,8 @@ dependencies {
     implementation generalDeps.recyclerview
     implementation generalDeps.viewModel
 
+    implementation generalDeps.picasso
+
     implementation generalDeps.kotlinJdk
     implementation generalDeps.rxkotlin
     implementation generalDeps.rxjava
