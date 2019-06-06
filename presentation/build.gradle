@@ -30,8 +30,13 @@ dependencies {
     implementation generalDeps.appcompat
     implementation generalDeps.design
     implementation generalDeps.constraintlayout
+    implementation generalDeps.recyclerview
+    implementation generalDeps.viewModel
 
     implementation generalDeps.kotlinJdk
+    implementation generalDeps.rxkotlin
+    implementation generalDeps.rxjava
+    implementation generalDeps.rxandroid
     implementation generalDeps.koin
     implementation generalDeps.koinAc
     implementation generalDeps.reflect
