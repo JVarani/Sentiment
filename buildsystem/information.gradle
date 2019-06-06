@@ -1,0 +1,6 @@
+ext {
+    APPLICATION_ID = 'com.example.sentiment'
+    CONSUMER_KEY = '"M2gfFLA0wvUjkyUGSWEfOvCoO"'
+    CONSUMER_SECRET = '"ePQk9Gmd4Dd4tI3SIB5dFNMaTndUv7vycRIQJ5qNf9IWaPoqwX"'
+    TWITTER_API = '\"https://api.twitter.com/\"'
+}
