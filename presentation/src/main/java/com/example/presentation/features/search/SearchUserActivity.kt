@@ -4,6 +4,8 @@ import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.AlphaAnimation
 import android.view.inputmethod.EditorInfo
 import com.example.presentation.R
 import com.example.presentation.base.BaseActivity
@@ -49,8 +51,8 @@ class SearchUserActivity : BaseActivity<SearchUserViewModel>() {
                             recyclerViewSearch.visibility = View.INVISIBLE
                         }
                         else -> {
-                            progressSearchLoading.visibility = View.GONE
-                            imgSearchLogo.visibility = View.GONE
+                            progressSearchLoading.visibility = View.INVISIBLE
+                            imgSearchLogo.fadeOut()
                             recyclerViewSearch.visibility = View.VISIBLE
 
                             editTextSearch.setCompoundDrawablesWithIntrinsicBounds(
@@ -61,6 +63,7 @@ class SearchUserActivity : BaseActivity<SearchUserViewModel>() {
                             )
                         }
                     }
+                    includeSearchError.visibility = View.INVISIBLE
                 }
             })
 
@@ -71,5 +74,24 @@ class SearchUserActivity : BaseActivity<SearchUserViewModel>() {
                     recyclerViewSearch.adapter = TweetsAdapter(list)
                 }
             })
+
+        viewModel
+            .mustShowError()
+            .observe(this, Observer<Unit> {
+                includeSearchError.visibility = View.VISIBLE
+                recyclerViewSearch.visibility = View.INVISIBLE
+                progressSearchLoading.visibility = View.INVISIBLE
+            })
+    }
+
+    fun View.fadeOut() {
+        if (this.visibility == View.VISIBLE) {
+            animation = AlphaAnimation(1f, 0.3f).apply {
+                interpolator = AccelerateInterpolator()
+                startOffset = 0
+                duration = 400
+            }
+            visibility = View.GONE
+        }
     }
 }

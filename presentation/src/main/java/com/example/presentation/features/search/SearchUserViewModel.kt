@@ -15,6 +15,9 @@ class SearchUserViewModel(
     private val pTweetMapper: PTweetMapper
 ) : BaseViewModel() {
 
+    private val errorLv = MutableLiveData<Unit>()
+    fun mustShowError(): LiveData<Unit> = errorLv
+
     private val loadingLv = MutableLiveData<Boolean>()
     fun isLoading(): LiveData<Boolean> = loadingLv
 
@@ -29,14 +32,18 @@ class SearchUserViewModel(
             .doOnSubscribe {
                 loadingLv.postValue(true)
             }
-            .doAfterTerminate {
-                loadingLv.postValue(false)
-            }
             .subscribeBy(
                 onSuccess = { list ->
-                    tWeetsLv.postValue(list)
+                    loadingLv.postValue(false)
+                    if (list.isEmpty())
+                        errorLv.postValue(Unit)
+                    else {
+                        tWeetsLv.postValue(list)
+                    }
                 },
                 onError = {
+                    loadingLv.postValue(false)
+                    errorLv.postValue(Unit)
                     Log.i("TEST", it.message)
                 }
             )
