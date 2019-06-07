@@ -32,7 +32,6 @@ class TwitterRepositoryImpl(
     override fun searchTweets(name: String): Single<List<Tweet>> {
         return twitterRemoteSource
             .searchTweets("Bearer ${getAuthToken().accessToken}", name)
-            .subscribeOn(Schedulers.newThread())
             .map(dTweetMapper::transform)
     }
 }

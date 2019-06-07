@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">Sentiment</string>
     <string name="search_user_hint">Search tweets from any user</string>
-    <string name="search_error_default">Não conseguimos encontrar resultados\nTente novamente!</string>
+    <string name="search_error_default">No results found\nTry again!</string>
+
+    <string name="general_loading">Loading…</string>
+    <string name="error_message">Could not calculate the feeling…</string>
+    <string name="title_error">Ops!</string>
+    <string name="ok">Ok</string>
+
+    <string name="emoji_happy">This is a happy tweet!</string>
+    <string name="emoji_normal">This is a normal tweet!</string>
+    <string name="emoji_sad">This is a sad tweet!</string>
 </resources>

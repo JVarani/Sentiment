@@ -7,6 +7,8 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import com.example.presentation.R
 import com.example.presentation.base.BaseActivity
+import com.example.presentation.features.search.dialogs.SentimentDialog
+import com.example.presentation.features.search.enums.PSentiment
 import com.example.presentation.features.search.models.PTweet
 import com.example.presentation.general.extensions.fadeOut
 import com.example.presentation.general.extensions.hideKeyboard
@@ -14,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_search_user.*
 import org.koin.android.architecture.ext.viewModel
 
 class SearchUserActivity : BaseActivity<SearchUserViewModel>() {
+
     override val viewModel by viewModel<SearchUserViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +55,6 @@ class SearchUserActivity : BaseActivity<SearchUserViewModel>() {
                         else -> {
                             progressSearchLoading.visibility = View.INVISIBLE
                             imgSearchLogo.fadeOut()
-                            recyclerViewSearch.visibility = View.VISIBLE
 
                             editTextSearch.setCompoundDrawablesWithIntrinsicBounds(
                                 getDrawable(R.drawable.ic_twitter_24dp),
@@ -70,7 +72,11 @@ class SearchUserActivity : BaseActivity<SearchUserViewModel>() {
             .getTweets()
             .observe(this, Observer<List<PTweet>> { listN ->
                 listN?.let { list ->
-                    recyclerViewSearch.adapter = TweetsAdapter(list)
+                    recyclerViewSearch.visibility = View.VISIBLE
+                    recyclerViewSearch.adapter = TweetsAdapter(list) { pTweet ->
+                        viewModel.onAnalyzeTweet(pTweet.tweet)
+
+                    }
                 }
             })
 
@@ -80,6 +86,14 @@ class SearchUserActivity : BaseActivity<SearchUserViewModel>() {
                 includeSearchError.visibility = View.VISIBLE
                 recyclerViewSearch.visibility = View.INVISIBLE
                 progressSearchLoading.visibility = View.INVISIBLE
+            })
+
+        viewModel
+            .getSentiment()
+            .observe(this, Observer<PSentiment> { sentimentN ->
+                sentimentN?.let { sentiment ->
+                    val sentimentDialog = SentimentDialog(sentiment, this)
+                }
             })
     }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "dogwood-reserve-242919",
+  "private_key_id": "1f7c1a5598b66f53f3c9524325f922f77bd09cda",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDSru+9Q7xQZbul\nlUO9TkBTe4lkFhzEokr9LSnxho9tm8qQgcfM4OEp+ALeSLMGxZXDqfQ+WYMSL7f2\nwDGKZW65C6sDgPOL5o6WRjHP1Un9nw3S2lyheXozUKwwFzbwF0tB2b2zQ0FRSvLJ\nBGvHwlrBkghRuw4n9TpgeqBXyjfOMRtsHSYDIZgjeU998LA6UCwi33rWWKzWX4Af\nD0jmzdpmU+7CbSNH6L6zUh5R/rWXMFxKQGSz0bmCsc1LJjfkParSKirwC5p2/2J5\nLxVgT6l2Wn/NQVUsqiG1Ik6Ys7gplp/ZcIh3fWbn7P/tSB/8bQ58JCW8AQA209JT\nAeaIbvtvAgMBAAECggEAG8vNwHw7z6WkbLO1RLgav4jodwZ91CmPWDjJtF5q9Oyd\nfJRKzoqK2nUot7gCuq191VtKaKF5rAAUtt7jil1YjtxtuyAbwcTw4f2v27pJsUb3\nVW7O0tUKnNOTbCLb8jA4kx8NqqWAbB/FyWSmbawEOk6wf0v9EaOGiK0VE5AP7cmK\nY5qKG9xecAAm11GSs6PXlJ6VKpkEPB2/xM7wxJOSeyo08piffa2qFmykZBFYFT+q\n1Ueb6JEsph33FQeOSHRkADkj9PdLSZL28FOgsB7/cowfqWMas+2v7ORmZpCYzI5l\nchFW5FpvpYmwVDzDAyGRNv4dWyzkleqf/Em0A4yKGQKBgQD5WAl7U1sqV6BVg97Z\nPHGBopU3v/PT6uvo2CsV2vsDhT6wAQJyJyWBdWZYU7ucux2p0r/kOxdSGuGNKdFU\niS8L9CZsE+HTwAzVENAtkrkOl7cOab8kY7xFCZeGlI7hYJ7GYXDS5kx0MqbhOJRf\nk1S7LhugCKKEwzAf5nHaRn+uFwKBgQDYTrOVp07dlSzI500ZLDBvXJBg7SU9q20U\nqZEHs1T6D4BzNfbKlNVs0Xos6r5v1+QXvYZq8Rv0KkGkClZfwC0HVVuSCATgwhob\nf+RNDYjhQoRKMDDuNjaRMtaNe8XCTphdn0tQFQ16fPr6/J2gpR8f9sF/qr73AkRC\ntAtHkYSMaQKBgQDzj5SLfAwUW04J2muHhexWNgtOTtmNSu+wHeBQU/xYHwLyB7ps\n6WJQh+42H2ynF3xNU8kP1szb7dge/Rc2XV6wbYhOkElKf1HJmsfPjH/qCjbNBGyq\nziWsxkbWNi0vaCMQI0SDLmTGKGgsngkJJzBgOxTPCUA/MS7EKmVSUwULdwKBgGob\n6WKvaTOvmwGO3bZMhBIM8VJq4srmziLFr7x8T2I/un5J6Z+k9TFlbS6dlP/egyjW\nMxtA3bqgBAVJgOeFqVEgoUP4pRPwg8gbq83UpuIBtE2EaGxisc/2hWNwZSmVTo8W\ntmY5fZwptSDsTRLiDWurq25KP1WCiiPCmInqK4CJAoGBAOyTmibDSgpBFoRISZcV\nfrEY0wbsl9EwyA2vF7+f0RzFe7qy/Z+glBybCjdG98DQZUE/rCK1qBTXhDZBa7Q+\nayVGYLH6CdNDShg4DThwjY1od2ixI258v5bfE8OdYocOxLD+YMn0sj0BDTSzOdLi\nD1KefDAmZFTor2rfvFGcfW9A\n-----END PRIVATE KEY-----\n",
+  "client_email": "sentiment@dogwood-reserve-242919.iam.gserviceaccount.com",
+  "client_id": "101889486042386665298",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sentiment%40dogwood-reserve-242919.iam.gserviceaccount.com"
+}

@@ -21,6 +21,9 @@ android {
         buildConfigField "String", "TWITTER_API", TWITTER_API
         buildConfigField "String", "CONSUMER_KEY", CONSUMER_KEY
         buildConfigField "String", "CONSUMER_SECRET", CONSUMER_SECRET
+
+        buildConfigField "String", "GOOGLE_LANGUAGE_API", GOOGLE_LANGUAGE_API
+        buildConfigField "String", "GOOGLE_LANGUAGE_KEY", GOOGLE_LANGUAGE_KEY
     }
 
     buildTypes {

@@ -7,4 +7,10 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="divider">#C0BCBC</color>
+
+    <color name="yellow_dialog">#FFC107</color>
+    <color name="gray_dialog">#9E9E9E</color>
+    <color name="blue_dialog">#1976D2</color>
+
+    <color name="black_alpha50">#7b000000</color>
 </resources>
