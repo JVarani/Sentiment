@@ -20,6 +20,10 @@ android {
         }
     }
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
 }
 
 dependencies {
@@ -42,6 +46,10 @@ dependencies {
     implementation generalDeps.koin
     implementation generalDeps.koinAc
     implementation generalDeps.reflect
+
+    testImplementation testDeps.mockito
+    testImplementation testDeps.mockitoKotlin
+    testImplementation testDeps.mockitoInline
 
     testImplementation testDeps.junit
 
