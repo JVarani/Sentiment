@@ -9,7 +9,6 @@ import com.example.domain.twitter.models.User
 class DTweetMapper : BaseMapper<DTweet, Tweet>() {
     override fun transform(entity: DTweet): Tweet {
         return Tweet(
-            createdAt = entity.createdAt ?: "",
             tweet = entity.tweet ?: "",
             user = mapUser(entity.user)
         )
@@ -17,7 +16,6 @@ class DTweetMapper : BaseMapper<DTweet, Tweet>() {
 
     private fun mapUser(dUser: DUser?) = User(
         name = dUser?.name ?: "",
-        screenName = dUser?.screenName ?: "",
         profileImage = dUser?.profileImage ?: ""
     )
 }

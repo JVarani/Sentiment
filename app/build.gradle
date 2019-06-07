@@ -8,6 +8,11 @@ apply from: '../buildsystem/information.gradle'
 android {
     compileSdkVersion app.compileSdkVersion
 
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/INDEX.LIST'
+    }
+
     defaultConfig {
         applicationId APPLICATION_ID
         minSdkVersion app.minSdkVersion

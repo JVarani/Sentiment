@@ -10,23 +10,28 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_tweets.view.*
 
 class TweetsAdapter(
-    private val list: List<PTweet>
+    private val list: List<PTweet>,
+    private val listener: (PTweet) -> Unit
 ) : RecyclerView.Adapter<TweetsAdapter.ViewHolder>() {
 
-
-    class ViewHolder(private val item: View) : RecyclerView.ViewHolder(item) {
+    class ViewHolder(private val item: View, private val listener: (PTweet) -> Unit) :
+        RecyclerView.ViewHolder(item) {
 
         fun bindView(pTweet: PTweet) {
             Picasso.get().load(pTweet.user.profileImage).into(item.imgItemTweet)
             item.txtItemTweetName.text = pTweet.user.name
             item.txtItemTweetTweets.text = pTweet.tweet
+
+            item.setOnClickListener {
+                listener(pTweet)
+            }
         }
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(viewGroup.context)
-                .inflate(R.layout.item_tweets, viewGroup, false)
+                .inflate(R.layout.item_tweets, viewGroup, false), listener
         )
     }
 

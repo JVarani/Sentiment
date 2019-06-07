@@ -76,6 +76,7 @@ ext.generalDeps = [
         okhttp3LoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp3logginginterceptor_version",
         gson                     : "com.google.code.gson:gson:$gson_version",
 
+        // Picasso:
         picasso                  : "com.squareup.picasso:picasso:$picasso_version",
 ]
 
